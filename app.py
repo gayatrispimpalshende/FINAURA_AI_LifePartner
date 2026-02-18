@@ -17,27 +17,27 @@ if "page" not in st.session_state:
 # ---------------- HOME PAGE ----------------
 if st.session_state.page == "home":
 
-    st.title("💳 FINAURA AI – Intelligent Financial Recommendation System")
+    st.title("💎 FINAURA AI – Intelligent Financial Recommendation System")
 
-    st.markdown("## 🚀 How It Works")
+    st.markdown("##  How It Works")
 
     st.markdown("""
-    ### Step 1️⃣ – Enter Financial Details  
+    ### Step 1️ – Enter Financial Details  
     Provide your age, income, expenses, savings %, and life events.
 
-    ### Step 2️⃣ – AI Analysis  
+    ### Step 2️ – AI Analysis  
     Our Machine Learning model analyzes your financial behavior.
 
-    ### Step 3️⃣ – Smart Recommendation  
+    ### Step 3️ – Smart Recommendation  
     The system predicts the most suitable financial product.
 
-    ### Step 4️⃣ – Engagement Optimization  
+    ### Step 4️ – Engagement Optimization  
     View confidence score and engagement probability.
     """)
 
     if st.button("🔍 Start Analysis"):
         st.session_state.page = "main"
-        st.experimental_rerun()
+        st.rerun()
 
 # ---------------- MAIN APP ----------------
 elif st.session_state.page == "main":
@@ -98,7 +98,7 @@ elif st.session_state.page == "main":
 
         intelligence_score = min(round((income / (monthly_expense + 1)) * 10, 2), 100)
 
-        st.markdown("## 🤖 AI Agent Decision Engine")
+        st.markdown("##  AI Agent Decision Engine")
 
         colA, colB = st.columns(2)
 
@@ -130,13 +130,13 @@ elif st.session_state.page == "main":
         st.markdown("---")
 
         # ---------------- Real-Time Optimization ----------------
-        st.subheader("⚡ Real-Time Optimization Engine")
+        st.subheader(" Real-Time Optimization Engine")
 
         engagement_score = int(probability * 0.9)
         st.progress(engagement_score)
         st.write(f"📈 Expected Engagement Rate: {engagement_score}%")
 
-        st.markdown("### 🔐 Privacy & Compliance Layer Active")
+        st.markdown("###  Privacy & Compliance Layer Active")
 
         # ---------------- Reason Generator ----------------
         if prediction == 0:
@@ -149,7 +149,7 @@ elif st.session_state.page == "main":
             reason = "Balanced financial behavior observed."
 
         message = f"""
-        Hi {name} 👋,
+        Hi {name} ,
 
         Based on your financial activity, we recommend our {recommended_product}.  
         {reason}
@@ -160,7 +160,7 @@ elif st.session_state.page == "main":
         st.markdown("### 💬 Personalized Message")
         st.write(message)
 
-        st.markdown("### 📊 Income vs Expense")
+        st.markdown("### Income vs Expense")
         st.bar_chart({"Income": income, "Expense": monthly_expense})
 
         st.markdown("---")
