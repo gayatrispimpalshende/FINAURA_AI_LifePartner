@@ -2,7 +2,8 @@ import streamlit as st
 import joblib
 import numpy as np
 import time
-
+if "page" not in st.session_state:
+    st.session_state.page = "home"
 # Load model
 model = joblib.load("finaura_model.pkl")
 
@@ -82,7 +83,7 @@ if st.button("🔍 Analyze Financial Profile"):
     intelligence_score = round((income / (monthly_expense + 1)) * 10, 2)
     intelligence_score = min(intelligence_score, 100)
 
-    st.markdown("## 🤖 AI Agent Decision Engine")
+    st.markdown("##  AI Agent Decision Engine")
 
     col1, col2 = st.columns(2)
 
@@ -99,7 +100,7 @@ if st.button("🔍 Analyze Financial Profile"):
     # ----------------------------
     # Omnichannel Orchestration
     # ----------------------------
-    st.subheader("📡 Smart Channel Selection")
+    st.subheader(" Smart Channel Selection")
 
     channel = st.selectbox(
         "Choose Engagement Channel",
@@ -107,25 +108,25 @@ if st.button("🔍 Analyze Financial Profile"):
     )
 
     if channel == "SMS":
-        st.success(f"📱 SMS Sent: Hi! Based on your profile, we recommend {recommended_product}.")
+        st.success(f" SMS Sent: Hi! Based on your profile, we recommend {recommended_product}.")
     elif channel == "Email":
-        st.success(f"📧 Email Delivered: Exclusive {recommended_product} curated for you!")
+        st.success(f" Email Delivered: Exclusive {recommended_product} curated for you!")
     else:
-        st.success(f"🔔 In-App Alert: {recommended_product} now available for you.")
+        st.success(f" In-App Alert: {recommended_product} now available for you.")
 
     st.markdown("---")
 
      # ----------------------------
     # Real-Time Optimization
     # ----------------------------
-    st.subheader("⚡ Real-Time Optimization Engine")
+    st.subheader(" Real-Time Optimization Engine")
 
     engagement_score = int(probability * 0.9)
     st.progress(engagement_score)
 
     st.write(f"📈 Expected Engagement Rate: {engagement_score}%")
 
-    st.markdown("### 🔐 Privacy & Compliance Layer Active")
+    st.markdown("###  Privacy & Compliance Layer Active")
 
     # Reason Generator
     if prediction == 0:
@@ -202,3 +203,26 @@ if st.button("🔍 Analyze Financial Profile"):
      """, unsafe_allow_html=True)
     st.markdown("---")
     st.caption("Developed by Gayatri, chaitani | AI Engineering | 2026")
+    if st.session_state.page == "home":
+
+     st.title("💳 FINAURA AI – Intelligent Financial Recommendation System")
+
+     st.markdown("## 🚀 How It Works")
+
+    st.markdown("""
+    ### Step 1️⃣ – Enter Financial Details
+    Provide your age, income, expenses, savings %, and life events.
+
+    ### Step 2️⃣ – AI Analysis
+    Our Machine Learning model analyzes your financial behavior.
+
+    ### Step 3️⃣ – Smart Recommendation
+    The system predicts the most suitable financial product.
+
+    ### Step 4️⃣ – Engagement Optimization
+    View confidence score and engagement probability.
+    """)
+
+    if st.button(" Start Analysis"):
+        st.session_state.page = "main"
+
