@@ -37,13 +37,17 @@ if st.session_state.page == "home":
 
     if st.button("🔍 Start Analysis"):
         st.session_state.page = "main"
-        st.rerun()
+        st.experimental_rerun()
 
 # ---------------- MAIN APP ----------------
 elif st.session_state.page == "main":
 
-    # Load Model
-    model = joblib.load("finaura_model.pkl")
+    # Load model
+    try:
+        model = joblib.load("finaura_model.pkl")
+    except:
+        st.error("Error: Model file not found or failed to load.")
+        st.stop()
 
     st.markdown("""
     <h1 style='text-align: center; color: #2E86C1;'>
@@ -94,22 +98,22 @@ elif st.session_state.page == "main":
 
         intelligence_score = min(round((income / (monthly_expense + 1)) * 10, 2), 100)
 
-        st.markdown("##  AI Agent Decision Engine")
+        st.markdown("## 🤖 AI Agent Decision Engine")
 
-        col1, col2 = st.columns(2)
+        colA, colB = st.columns(2)
 
-        with col1:
+        with colA:
             st.success(f"🎯 Recommended Product: **{recommended_product}**")
             st.info(f"🔍 Confidence Score: {round(probability, 2)}%")
 
-        with col2:
+        with colB:
             st.metric("📊 360° Profile Score", f"{intelligence_score}/100")
             st.progress(int(probability))
 
         st.markdown("---")
 
         # ---------------- Channel Selection ----------------
-        st.subheader(" Smart Channel Selection")
+        st.subheader("📡 Smart Channel Selection")
 
         channel_choice = st.selectbox(
             "Choose Engagement Channel",
@@ -126,13 +130,13 @@ elif st.session_state.page == "main":
         st.markdown("---")
 
         # ---------------- Real-Time Optimization ----------------
-        st.subheader(" Real-Time Optimization Engine")
+        st.subheader("⚡ Real-Time Optimization Engine")
 
         engagement_score = int(probability * 0.9)
         st.progress(engagement_score)
         st.write(f"📈 Expected Engagement Rate: {engagement_score}%")
 
-        st.markdown("###  Privacy & Compliance Layer Active")
+        st.markdown("### 🔐 Privacy & Compliance Layer Active")
 
         # ---------------- Reason Generator ----------------
         if prediction == 0:
