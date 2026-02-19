@@ -123,7 +123,7 @@ col1, col2, col3 = st.columns(3, gap="large")
 with col1:
     st.markdown(f"""
     <div class="feature-card">
-        <img src="https://img.icons8.com/ios-filled/100/00C2A8/brain.png"/>
+       
         <h3>Smart Analysis</h3>
         <p>Analyze your financial behavior instantly and get insights tailored to you.</p>
     </div>
@@ -132,7 +132,7 @@ with col1:
 with col2:
     st.markdown(f"""
     <div class="feature-card">
-        <img src="https://img.icons8.com/ios-filled/100/00C2A8/pie-chart.png"/>
+       
         <h3>Personalized Recommendation</h3>
         <p>Receive the most suitable financial products based on your unique profile.</p>
     </div>
@@ -141,7 +141,7 @@ with col2:
 with col3:
     st.markdown(f"""
     <div class="feature-card">
-        <img src="https://img.icons8.com/ios-filled/100/00C2A8/analytics.png"/>
+      
         <h3>Engagement Optimization</h3>
         <p>Understand the best channels and timing to maximize your financial engagement.</p>
     </div>
@@ -151,7 +151,7 @@ col1, col2, col3, col4 = st.columns(4, gap="medium")
 
 col1.markdown("""
 <div style="text-align:center;">
-<img src="https://img.icons8.com/ios-filled/80/00C2A8/user.png"/>
+<
 <br><b>Enter Details</b>
 <br>Provide age, income, expenses, and life events
 </div>
@@ -159,7 +159,7 @@ col1.markdown("""
 
 col2.markdown("""
 <div style="text-align:center;">
-<img src="https://img.icons8.com/ios-filled/80/00C2A8/artificial-intelligence.png"/>
+
 <br><b>AI Analysis</b>
 <br>Predict financial behavior using ML model
 </div>
@@ -167,7 +167,7 @@ col2.markdown("""
 
 col3.markdown("""
 <div style="text-align:center;">
-<img src="https://img.icons8.com/ios-filled/80/00C2A8/money.png"/>
+
 <br><b>Get Recommendation</b>
 <br>Receive the perfect financial product
 </div>
@@ -175,7 +175,7 @@ col3.markdown("""
 
 col4.markdown("""
 <div style="text-align:center;">
-<img src="https://img.icons8.com/ios-filled/80/00C2A8/graph.png"/>
+
 <br><b>Optimize Engagement</b>
 <br>Maximize returns and engagement
 </div>
