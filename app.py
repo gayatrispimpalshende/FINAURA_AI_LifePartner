@@ -5,35 +5,71 @@ import time
 
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
-    page_title="FINAURA - Agentic AI",
-    page_icon="💎",
-    layout="wide"
+    page_title="Finaura AI",
+    page_icon="💰",
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
+st.markdown("""
+<style>
+/* Main background */
+body, .stApp {
+    background-color: #0E1117;
+    color: #E0E0E0;
+}
 
+/* Headings */
+h1, h2, h3, h4 {
+    color: #00C2A8;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background-color: #111827;
+    color: #E0E0E0;
+}
+
+/* Buttons */
+.stButton>button {
+    background-color: #00C2A8;
+    color: white;
+    border-radius: 12px;
+    height: 3em;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* Metric Cards */
+[data-testid="metric-container"] {
+    background-color: #1F2937;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+/* Card containers */
+.card {
+    background-color: #1F2937;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+}
+</style>
+""", unsafe_allow_html=True)
 # ---------------- SESSION STATE ----------------
 if "page" not in st.session_state:
     st.session_state.page = "home"
 
 # ---------------- HOME PAGE ----------------
 if st.session_state.page == "home":
+    st.title("💎 FINAURA AI – Your Smart Financial Companion")
+    st.markdown("**Get AI-powered personalized financial recommendations instantly!**")
 
-    st.title("💎 FINAURA AI – Intelligent Financial Recommendation System")
+    st.image("https://images.unsplash.com/photo-1605902711622-cfb43c443f1c?auto=format&fit=crop&w=1000&q=80", use_column_width=True)
 
-    st.markdown("##  How It Works")
-
-    st.markdown("""
-    ### Step 1️ – Enter Financial Details  
-    Provide your age, income, expenses, savings %, and life events.
-
-    ### Step 2️ – AI Analysis  
-    Our Machine Learning model analyzes your financial behavior.
-
-    ### Step 3️ – Smart Recommendation  
-    The system predicts the most suitable financial product.
-
-    ### Step 4️ – Engagement Optimization  
-    View confidence score and engagement probability.
-    """)
+if st.button("🔍 Start Your Analysis Now"):
+    st.session_state.page = "main"
+    st.rerun()
 
     if st.button("🔍 Start Analysis"):
         st.session_state.page = "main"
@@ -97,8 +133,7 @@ elif st.session_state.page == "main":
         recommended_product = product_map.get(prediction, "Smart Financial Plan")
 
         intelligence_score = min(round((income / (monthly_expense + 1)) * 10, 2), 100)
-
-        st.markdown("##  AI Agent Decision Engine")
+        st.markdown("<div class='card'><h3>AI Agent Decision Engine</h3></div>", unsafe_allow_html=True)
 
         colA, colB = st.columns(2)
 
