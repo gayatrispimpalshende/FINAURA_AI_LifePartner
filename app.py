@@ -17,8 +17,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Hero image
-st.image("/mnt/data/A_homepage_for_Finaura_AI,_an_AI-powered_financial.png", use_column_width=True)
+
 
 st.markdown("""
 <style>
@@ -127,7 +126,6 @@ if st.session_state.page == "home":
     st.title("💎 FINAURA AI – Your Smart Financial Companion")
     st.markdown("**Get AI-powered personalized financial recommendations instantly!**")
 
-    st.image("https://images.unsplash.com/photo-1605902711622-cfb43c443f1c?auto=format&fit=crop&w=1000&q=80", use_column_width=True)
 
 if st.button("🔍 Start Your Analysis Now"):
     st.session_state.page = "main"
