@@ -116,70 +116,7 @@ div[data-testid="stSelectbox"] div[role="combobox"] {
 }
 </style>
 """, unsafe_allow_html=True)
-st.subheader("What Finaura AI Can Do")
 
-col1, col2, col3 = st.columns(3, gap="large")
-
-with col1:
-    st.markdown(f"""
-    <div class="feature-card">
-       
-        <h3>Smart Analysis</h3>
-        <p>Analyze your financial behavior instantly and get insights tailored to you.</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col2:
-    st.markdown(f"""
-    <div class="feature-card">
-       
-        <h3>Personalized Recommendation</h3>
-        <p>Receive the most suitable financial products based on your unique profile.</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col3:
-    st.markdown(f"""
-    <div class="feature-card">
-      
-        <h3>Engagement Optimization</h3>
-        <p>Understand the best channels and timing to maximize your financial engagement.</p>
-    </div>
-    """, unsafe_allow_html=True)
-st.subheader("How It Works")
-col1, col2, col3, col4 = st.columns(4, gap="medium")
-
-col1.markdown("""
-<div style="text-align:center;">
-<
-<br><b>Enter Details</b>
-<br>Provide age, income, expenses, and life events
-</div>
-""", unsafe_allow_html=True)
-
-col2.markdown("""
-<div style="text-align:center;">
-
-<br><b>AI Analysis</b>
-<br>Predict financial behavior using ML model
-</div>
-""", unsafe_allow_html=True)
-
-col3.markdown("""
-<div style="text-align:center;">
-
-<br><b>Get Recommendation</b>
-<br>Receive the perfect financial product
-</div>
-""", unsafe_allow_html=True)
-
-col4.markdown("""
-<div style="text-align:center;">
-
-<br><b>Optimize Engagement</b>
-<br>Maximize returns and engagement
-</div>
-""", unsafe_allow_html=True)
 
 # ---------------- SESSION STATE ----------------
 if "page" not in st.session_state:
